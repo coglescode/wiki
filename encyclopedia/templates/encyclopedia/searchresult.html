@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+   
+{% endblock %}
+
+{% block body %}
+
+                
+    {% if list  %}
+        <h1> {{ header }}  </h1>
+    {% else %}
+        <h1> No match for your search. You can create it instead.</h1> 
+    {% endif %} 
+    
+    <ul>
+        {% for query in list %}
+           <li>
+               <a href="{% url 'title' query %}">{{ query }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+ 
+
+{% endblock %} 

@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+    {% block header %}
+        <h1>{{ header }}</h1>
+    {% endblock %}
+
+<div>
+    <!-- url goes to view.editform -->
+    <form action="{% url 'editform' %}" method="POST">
+        {% csrf_token %}
+        {{ editform }}
+        <input class="btn btn-primary btn-lg mt-2"  type="submit" value="Save">
+        
+    </form>
+</div>
+
+
+ 
+
+{% endblock %} 
